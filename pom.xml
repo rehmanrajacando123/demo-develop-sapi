@@ -100,8 +100,9 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
-						<username>${username}</username>
-						<password>${password}</password>
+						<server>anypointPlatform</server>
+						<!-- <username>${username}</username>
+						<password>${password}</password> -->
 						<region>us-east-2</region>
 						<objectStoreV2>true</objectStoreV2>
 						<properties>
