@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="demo-project-sapi-test-suite.xml" />
+	<munit:test name="demo-project-sapi-test-suite-demo-project-sapiFlowTest" doc:id="b0757a04-bbc0-46e5-bcfd-74dfdfe04428" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to demo-project-sapiFlow" doc:id="9232e83a-57ef-4f0c-94e3-411e47f2dc8a" name="demo-project-sapiFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert doc:name="Assert Payload Not Null" doc:id="da9fec83-8c71-4877-8529-4aa8dd03188c" />
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
