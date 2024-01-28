@@ -2,6 +2,9 @@ pipeline {
 
   agent any
   
+   environment {
+     ANYPOINT_CREDS=credentials('ANYPOINT_CREDENTIALS')
+  }
   stages {
     
     stage('Build') {
@@ -17,8 +20,12 @@ pipeline {
     }
 
      stage('Deployment') {
+      environment {
+        CLIENT_ID=credentials('DEV_CLIENT_ID')
+        CLIENT_SECRET=credentials('DEV_CLIENT_SECRET')
+      }
       steps {
-            bat 'mvn -U -V -e -B -DskipTests -Pdevelop deploy -DmuleDeploy'
+            bat 'mvn -U -V -e -B -DskipTests -Pdevelop deploy -DmuleDeploy -Danypoint.username="%ANYPOINT_CREDS_USR%" -Danypoint.password="%ANYPOINT_CREDS_PSW%" -Danypoint.platform.client_id="%CLIENT_SECRET%" -Danypoint.platform.client_secret="%CLIENT_SECRET%"'
       }
     }
   }
