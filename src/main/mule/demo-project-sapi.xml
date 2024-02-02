@@ -14,9 +14,10 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<ee:transform doc:name="Transform Message" doc:id="4e39a3d3-144f-48eb-b19b-d53c174913ff" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
-output application/java
+output application/json
 ---
 {
+	"message": "hi, helo world...."
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
